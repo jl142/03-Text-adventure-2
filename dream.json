@@ -1,0 +1,94 @@
+{
+  "verbs": [
+    { "v": "DOOR",   "map": "DOOR" },
+    { "v": "HALL",   "map": "DOOR" },
+    { "v": "CARPET",   "map": "CARPET" },
+    { "v": "WINDOW",   "map": "WINDOW" },
+    { "v": "NO",   "map": "NO" },
+    { "v": "YES",   "map": "YES" },
+    { "v": "JUMP",   "map": "JUMP" },
+    { "v": "GO BACK",   "map": "GO BACK" }
+  ],
+
+  "rooms": {
+    "EMPERORROOM": {
+      "name": "You are in the Emperor's Room",
+      "desc": "The emperor's body lays motionless on the floor, you sheath your sword, still dripping in blood. You hear the imperial guards sprinting down the hall to the door, there is a large carpet on the floor and an open window behind you, time is running out. What would you like to inspect?",
+      "exits": [
+        {
+          "verb": "DOOR",
+          "target": "GUARDS",
+          "condition": ""
+        },
+        {
+          "verb": "CARPET",
+          "target": "CARPET",
+          "condition": ""
+        },
+        {
+          "verb": "WINDOW",
+          "target": "WINDOW",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "GUARDS": {
+      "name": "The guards jump you.",
+      "desc": "You are unable to escape and are sentenced to a life in prison. Type Q to quit and try again.",
+      "exits": [],
+      "inventory": []
+    },
+    "CARPET": {
+      "name": "You find yourself in an air duct",
+      "desc": "As soon as you stepped on the carpet a trapdoor opened up and you fell in, luckily you were able to climb into an airduct before you fell to your death. As you crawl along you notice a vent with a room underneath, do you want to jump into the room?",
+      "exits": [
+        {
+          "verb": "YES",
+          "target": "GUARDS",
+          "condition": ""
+        },
+        {
+          "verb": "NO",
+          "target": "VICTORY",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "WINDOW": {
+      "name": "You lean against the windowsill",
+      "desc": "You stare down to the streets below, it has to be atleast 50 stories, maybe more. What do you want to do?",
+      "exits": [
+        {
+          "verb": "JUMP",
+          "target": "VICTORY",
+          "condition": ""
+        },
+        {
+          "verb": "GO BACK",
+          "target": "EMPERORROOM",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "VICTORY": {
+      "name": "You made it!",
+      "desc": "Congratulations! Through your agile moves and quick thinking you have managed to assasinate your target and escape! Press Q to quit.",
+      "exits": [
+        {
+          "verb": "YES",
+          "target": "GUARDS",
+          "condition": ""
+        },
+        {
+          "verb": "NO",
+          "target": "VICTORY",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    }
+  }
+}
