@@ -32,7 +32,7 @@ def update(response,game,current):
 def main():
 
     game = {}
-    with open('dream.json') as json_file:
+    with open('hitman.json') as json_file:
         game = json.load(json_file)
 
     current = 'EMPERORROOM'
